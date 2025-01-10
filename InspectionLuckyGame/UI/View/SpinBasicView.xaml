@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="InspectionLuckyGame.UI.View.SpinBasicView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InspectionLuckyGame.UI.View"
+             xmlns:component="clr-namespace:InspectionLuckyGame.UI.Components"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+    <Grid>
+        <Image Source="{Binding BackgroundPrize}" Stretch="Uniform" x:Name="BG"></Image>
+        <Grid Width="{Binding ElementName=BG, Path=Width}" Height="{Binding ElementName=BG, Path=Height}" Background="#20000000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1.3*"/>
+                <RowDefinition Height="3.06*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Vertical" 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Margin="0,-15,0,0">
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline2TextBlock}" Foreground="White" 
+                               HorizontalAlignment="Center" Text="{Binding Prize.Name}"/>
+                    <Separator Margin="0,2" Style="{StaticResource MaterialDesignLightSeparator}"/>
+                    <Button Style="{StaticResource MaterialDesignFlatDarkButton}" 
+                            Height="60" Command="{Binding SpinCommand}"
+                            x:Name="spinButton">
+                        <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}" Foreground="Wheat" 
+                                   HorizontalAlignment="Center"
+                                   FontWeight="Bold" Text="{Binding Prize.Description}"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ContentPresenter Content="{Binding HiddenCrossword}">
+                    <ContentPresenter.Resources>
+                        <DataTemplate DataType="{x:Type component:HiddenCrosswordViewmodel}">
+                            <component:HiddenCrosswordView/>
+                        </DataTemplate>
+                    </ContentPresenter.Resources>
+                </ContentPresenter>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button
+                    Height="70" Command="{Binding ResetPrizeCommand}"
+                    materialDesign:ButtonAssist.CornerRadius="35"
+                    IsEnabled="{Binding ElementName=spinButton, Path=IsEnabled}"
+                    HorizontalContentAlignment="Left"
+                    Width="350"
+                    HorizontalAlignment="Right"
+                    ToolTip="Reset | Quay lại giải này">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="BackupRestore" Height="30" Width="30" Margin="0,0,50,0"/>
+                        <TextBlock Text="Quay lại giải này" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <Button.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
+                            <Setter Property="Width" Value="350"/>
+                            <Setter Property="Padding" Value="15,0,0,0"/>
+                            <Setter Property="Margin" Value="0,0,-300,0"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Padding" Value="-45,0,0,0"/>
+                                    <Setter Property="Margin" Value="0,0,-190,0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <UniformGrid Columns="1" Width="1200" Height="450">
+                    <ContentPresenter Content="{Binding WinnerTable}">
+                        <ContentPresenter.Resources>
+                            <DataTemplate DataType="{x:Type component:WinnerTableViewmodel}">
+                                <component:WinnerTable/>
+                            </DataTemplate>
+                        </ContentPresenter.Resources>
+                    </ContentPresenter>
+                </UniformGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

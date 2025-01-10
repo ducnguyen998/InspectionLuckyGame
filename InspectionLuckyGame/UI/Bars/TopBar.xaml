@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="InspectionLuckyGame.UI.Bars.TopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InspectionLuckyGame.UI.Bars"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <materialDesign:ColorZone Padding="16" Background="Transparent">
+        <DockPanel>
+            <StackPanel Orientation="Horizontal">
+                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                              IsChecked="{Binding IsNavigationBarOpen}"
+                              Foreground="AntiqueWhite"
+                              />
+                <!--<TextBlock FontSize="18"
+                    Margin="16,0,0,0"
+                    VerticalAlignment="Center"
+                    Text="Inspection Innovation 1 Part - Quay số trúng thưởng" />-->
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button Height="35" Style="{StaticResource MaterialDesignFlatDarkButton}"
+                        Command="{Binding Navigation.PrevPageCommand}"
+                        Foreground="White"
+                        Padding="20,3,5,3">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Height="30" Width="30" Kind="PagePreviousOutline"/>
+                        <TextBlock VerticalAlignment="Center" Margin="6,0,0,0">Trang trước</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Height="35" Style="{StaticResource MaterialDesignFlatDarkButton}"
+                        Command="{Binding Navigation.NextPageCommand}"
+                        Foreground="White"
+                        Padding="5,3,20,3">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Height="30" Width="30" Kind="PageNextOutline"/>
+                        <TextBlock VerticalAlignment="Center" Margin="6,0,0,0">Trang sau</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <TextBlock DockPanel.Dock="Right"></TextBlock>
+        </DockPanel>
+    </materialDesign:ColorZone>
+</UserControl>
