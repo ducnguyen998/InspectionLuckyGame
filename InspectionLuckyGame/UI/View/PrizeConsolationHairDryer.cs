@@ -1,5 +1,6 @@
 ﻿using InspectionLuckyGame.Core;
 using InspectionLuckyGame.Model;
+using InspectionLuckyGame.Properties;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace InspectionLuckyGame.UI.View
         public PrizeConsolationHairDryer(IServiceProvider serviceProvider) : base(serviceProvider)
         {
             this.Prize = serviceProvider.GetRequiredService<Document>().PrizeDictionary[EPrizeUnique.ConsolationHairDryer];
+            this.ImagePrize = Resources._4_1.ToBitmapImage();
         }
     }
 }

@@ -17,20 +17,20 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <StackPanel Orientation="Vertical" 
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center"
-                            Margin="0,-15,0,0">
-                    <TextBlock Style="{StaticResource MaterialDesignHeadline2TextBlock}" Foreground="White" 
-                               HorizontalAlignment="Center" Text="{Binding Prize.Name}"/>
-                    <Separator Margin="0,2" Style="{StaticResource MaterialDesignLightSeparator}"/>
+             VerticalAlignment="Center"
+             HorizontalAlignment="Center"
+             Margin="0,35,0,0">
                     <Button Style="{StaticResource MaterialDesignFlatDarkButton}" 
-                            Height="60" Command="{Binding SpinCommand}"
-                            x:Name="spinButton"
-                            >
+             Height="50" Command="{Binding SpinCommand}"
+             x:Name="spinButton">
                         <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}" Foreground="Wheat" 
-                                   HorizontalAlignment="Center"
-                                   FontWeight="Bold" Text="{Binding Prize.Description}"/>
+                    HorizontalAlignment="Center" FontSize="29"
+                    FontWeight="Bold" Text="{Binding Prize.Description}"/>
                     </Button>
+                    <Separator Margin="0" Style="{StaticResource MaterialDesignLightSeparator}"/>
+                    <TextBlock Style="{StaticResource MaterialDesignHeadline2TextBlock}" Foreground="White" 
+                FontSize="50" Margin="0,-15,0,0"
+                HorizontalAlignment="Center" Text="{Binding Prize.Name}"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
@@ -91,6 +91,9 @@
                         </ContentPresenter>
                     </ScrollViewer>-->
                 </UniformGrid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Image Source="{Binding ImagePrize}" HorizontalAlignment="Left" Margin="0,100,0,0"/>
             </Grid>
         </Grid>
     </Grid>

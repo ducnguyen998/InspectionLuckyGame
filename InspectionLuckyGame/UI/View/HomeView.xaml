@@ -14,11 +14,11 @@
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <TextBlock Style="{StaticResource MaterialDesignHeadline3TextBlock}" Foreground="White" 
+                <!--<TextBlock Style="{StaticResource MaterialDesignHeadline3TextBlock}" Foreground="White" 
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="40"
-                           >Bộ phận Inspection Innovation 1</TextBlock>
+                           >Bộ phận Inspection Innovation 1</TextBlock>-->
             </Grid>
         </Grid>
     </Grid>

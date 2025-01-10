@@ -14,10 +14,11 @@
                               IsChecked="{Binding IsNavigationBarOpen}"
                               Foreground="AntiqueWhite"
                               />
-                <!--<TextBlock FontSize="18"
-                    Margin="16,0,0,0"
-                    VerticalAlignment="Center"
-                    Text="Inspection Innovation 1 Part - Quay số trúng thưởng" />-->
+                <TextBlock Margin="730,-20,0,0"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="30"
+                           Text="Bộ phận Inspection Innovation 1" />
             </StackPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                 <Button Height="35" Style="{StaticResource MaterialDesignFlatDarkButton}"

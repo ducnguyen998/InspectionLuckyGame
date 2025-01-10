@@ -45,6 +45,8 @@ namespace InspectionLuckyGame.UI.View
 
         public BitmapImage BackgroundPrize { get; set; }
 
+        public BitmapImage ImagePrize { get; set; }
+
         protected virtual async Task DoSpin()
         {
             this.serviceProvider.GetRequiredService<Logger>().Write($"Spin for : {Prize.Name} | {Prize.Description}");

@@ -13,7 +13,7 @@ namespace InspectionLuckyGame.Core
 {
     public static class Helper
     {
-        private const string emmloyeeCsvLocation = @"Resources\Employees.csv";
+        private const string emmloyeeCsvLocation = @"D:\SDV-Projects\InspectionLuckyGame\InspectionLuckyGame\Resources\Employees.csv";
         
         public static string GetDescription(this Enum value)
         {
